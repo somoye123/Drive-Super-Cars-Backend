@@ -39,8 +39,8 @@ group :production do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'hirb'
-gem 'rubocop'
-gem 'jwt'
 gem 'active_model_serializers'
+gem 'hirb'
+gem 'jwt'
+gem 'rubocop'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]

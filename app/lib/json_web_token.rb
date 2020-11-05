@@ -15,11 +15,11 @@ class JsonWebToken
   end
 
   def self.jwks_hash
-    jwks_raw = Net::HTTP.get URI("https://authtutorial.auth0.com/.well-known/jwks.json")
+    jwks_raw = Net::HTTP.get URI('https://authtutorial.auth0.com/.well-known/jwks.json')
     jwks_keys = Array(JSON.parse(jwks_raw)['keys'])
     Hash[
       jwks_keys
-      .map do |k|
+        .map do |k|
         [
           k['kid'],
           OpenSSL::X509::Certificate.new(
