@@ -70,6 +70,7 @@ GEM
     hirb (0.7.3)
     i18n (1.8.5)
       concurrent-ruby (~> 1.0)
+    jwt (2.2.2)
     loofah (2.7.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -181,6 +182,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.2)
   byebug
   hirb
+  jwt
   pg
   puma (~> 4.1)
   rails (~> 6.0.3, >= 6.0.3.4)
