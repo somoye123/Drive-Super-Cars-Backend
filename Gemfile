@@ -42,4 +42,5 @@ end
 gem 'hirb'
 gem 'rubocop'
 gem 'jwt'
+gem 'active_model_serializers'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
