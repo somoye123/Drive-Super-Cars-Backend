@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
-  root 'users#create'
   scope module: 'api' do
     namespace :v1 do
-      resources :users, only: [:create]
+      resources :users, only: [:create,:index]
     end
   end
 end
