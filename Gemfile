@@ -43,4 +43,5 @@ gem 'active_model_serializers'
 gem 'hirb'
 gem 'jwt'
 gem 'rubocop'
+gem "figaro"
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
