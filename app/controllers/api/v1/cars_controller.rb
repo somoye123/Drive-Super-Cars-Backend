@@ -1,19 +1,24 @@
 module Api::V1
   class CarsController < SecuredController
+
     def index
-      @houses = House.all
-      render json: @houses
+      render json: Car.all
     end
 
     def create
-      house = House.create!(house_params)
-      render json: house, status: :created
+      car = Car.create!(car_params)
+      render json: car, status: :created
+    end
+
+    def show
+      @car = Car.find(params[:id])
+      return render json: @car, status: :ok if @car
     end
 
     private
 
-    def house_params
-      params.permit(:photo, :description, :category, :image)
+    def car_params
+      params.permit(:description, :name, :image)
     end
   end
 end
