@@ -1,5 +1,7 @@
 module Api::V1
   class UsersController < SecuredController
+  before_action :set_user, only: %i[create new_appointment]
+
     def create
       return render json: @user, status: :ok if @user
 
