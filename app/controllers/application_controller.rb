@@ -6,7 +6,7 @@ class ApplicationController < ActionController::API
   private
 
   def not_found(errors)
-    render json: errors, status: 404
+    render json: errors, status: :not_found
   end
 
   def invalid(errors)
