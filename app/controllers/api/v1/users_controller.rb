@@ -8,7 +8,7 @@ module Api::V1
       render json: user, status: :created
     end
 
-    def all_appointment
+    def show
       @user = User.find(params[:id])
       return render json: @user.cars, status: :ok if @user
     end
