@@ -1,6 +1,5 @@
 module Api::V1
   class CarsController < SecuredController
-
     def index
       render json: Car.all
     end
