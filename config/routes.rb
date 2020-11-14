@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   scope module: 'api' do
     namespace :v1 do
       resources :users, only: %i[create show]
-      resources :cars, only: %i[index show create]
+      resources :cars, only: %i[index show]
       post 'appointments', to: 'users#new_appointment'
     end
   end
