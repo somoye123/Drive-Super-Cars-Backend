@@ -1,5 +1,12 @@
 module Api::V1
   class UsersController < SecuredController
+    skip_before_action :authorize_request, only: [:index]
+
+    def index
+      @welcome = 'Welcome to my App!'
+      render html: @welcome
+    end
+
     def create
       @user = User.find_by(email: params[:email])
       return render json: @user, status: :ok if @user
