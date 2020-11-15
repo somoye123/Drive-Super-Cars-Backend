@@ -5,8 +5,8 @@ module Api::V1
     end
 
     def create
-      car = Car.create!(car_params)
-      render json: car, status: :created
+      @car = Car.create!(car_params)
+      respond_to_car()
     end
 
     def show
@@ -18,6 +18,13 @@ module Api::V1
 
     def car_params
       params.permit(:description, :name, :image)
+    end
+
+    def respond_to_car()
+      if @car.valid?()
+        car_serializer = CarSerializer.new(car: @car)
+        render json: car_serializer.serialize_new_car(), status: :created
+      end
     end
   end
 end
