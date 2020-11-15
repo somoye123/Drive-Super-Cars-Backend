@@ -1,13 +1,22 @@
 class CarSerializer < ActiveModel::Serializer
-  include Rails.application.routes.url_helpers
-  attributes :id, :name, :description, :image
+  def initialize(car: nil)
+    super
+    @car = car
+  end
 
-  def image
-    return unless object.image.attached?
+  def serialize_new_car()
+    serialized_new_car = serialize_car(@car)
+    serialized_new_car.to_json
+  end
 
+  private
+
+  def serialize_car(car)
     {
-      url: rails_blob_url(object.image),
-      signed_id: object.image.signed_id
+      id: car.id,
+      img_url: car.img_url,
+      name: car.name,
+      description: car.description
     }
   end
 end
