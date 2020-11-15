@@ -12,7 +12,7 @@ class CarSerializer < ActiveModel::Serializer
   private
 
   def serialize_car(car)
-    if car.is_a?
+    if car.is_a?(Array)
       return car.map do |car_object|
                { id: car_object.id, img_url: car_object.img_url,
                  name: car_object.name, description: car_object.description }
