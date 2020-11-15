@@ -3,6 +3,6 @@ class CarSerializer < ActiveModel::Serializer
   attributes :id, :name, :description, :image
 
   def image
-    rails_blob_url(object.iamge) if object.image.attached?
+    rails_blob_url(object.image) if object.image.attached?
   end
 end
