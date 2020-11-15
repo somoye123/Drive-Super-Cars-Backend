@@ -6,7 +6,4 @@ class Car < ApplicationRecord
 
   validates :name, :description, :image, presence: true
 
-  def img_url
-    Rails.application.routes.url_helpers.rails_blob_path(image, only_path: true)
-  end
 end
