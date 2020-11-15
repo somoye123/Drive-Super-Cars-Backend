@@ -15,7 +15,7 @@ class JsonWebToken
   end
 
   def self.jwks_hash
-    jwks_raw = Net::HTTP.get URI("https://drive-super-cars.us.auth0.com/.well-known/jwks.json")
+    jwks_raw = Net::HTTP.get URI('https://drive-super-cars.us.auth0.com/.well-known/jwks.json')
     jwks_keys = Array(JSON.parse(jwks_raw)['keys'])
     Hash[
       jwks_keys

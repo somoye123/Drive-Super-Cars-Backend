@@ -5,5 +5,4 @@ class Car < ApplicationRecord
   has_one_attached :image
 
   validates :name, :description, :image, presence: true
-
 end
