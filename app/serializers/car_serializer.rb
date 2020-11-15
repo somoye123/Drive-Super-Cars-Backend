@@ -4,7 +4,7 @@ class CarSerializer < ActiveModel::Serializer
     @car = car
   end
 
-  def serialize_new_car()
+  def serialize_new_car
     serialized_new_car = serialize_car(@car)
     serialized_new_car.to_json
   end
