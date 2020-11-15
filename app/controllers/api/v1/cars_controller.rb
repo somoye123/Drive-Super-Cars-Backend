@@ -22,10 +22,10 @@ module Api::V1
     end
 
     def respond_to_car()
-      if @car.valid?
-        car_serializer = CarSerializer.new(car: @car)
-        render json: car_serializer.serialize_new_car
-      end
+      return unless @car
+
+      car_serializer = CarSerializer.new(car: @car)
+      render json: car_serializer.serialize_new_car
     end
   end
 end
