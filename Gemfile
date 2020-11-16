@@ -31,11 +31,12 @@ group :development, :test do
   gem 'rspec-rails'
 end
 
-group :development do
-end
-
 group :production do
   gem 'pg'
+end
+
+group :test do
+  gem 'shoulda-matchers', '~> 4.0'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
