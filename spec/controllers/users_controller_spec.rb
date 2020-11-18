@@ -33,14 +33,14 @@ RSpec.describe Api::V1::UsersController, type: :controller do
   end
 
   describe 'GET /v1/users/1' do
-    before { get :index, params: { id: 1 } }
+    before { get :show, params: { id: 1 } }
 
     context 'when authorized' do
       it do
         should rescue_from(ActiveRecord::RecordNotFound)
           .with(:not_found)
       end
-      it { expect(response).to have_http_status(:ok) }
+      it { expect(response).to have_http_status(:not_found) }
     end
   end
 
