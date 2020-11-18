@@ -34,7 +34,7 @@ module Api::V1
     end
 
     def appointment_params
-      params.permit(:car_id, :user_id)
+      params.permit(:car_id, :user_id, :date, :city)
     end
   end
 end
