@@ -33,3 +33,6 @@
 
 # Ignore master key for decrypting credentials and more.
 node_modules/
+/config/credentials/development.key
+
+/config/credentials/production.key
