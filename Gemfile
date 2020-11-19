@@ -21,22 +21,28 @@ gem 'puma', '~> 4.1'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
-# gem 'rack-cors'
+gem 'rack-cors'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'sqlite3', '~> 1.4'
-end
-
-group :development do
+  # Use RSpec for specs
+  gem 'rspec-rails'
 end
 
 group :production do
   gem 'pg'
 end
 
+group :test do
+  gem 'shoulda-matchers', '~> 4.0'
+end
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+gem 'active_model_serializers'
+gem 'cloudinary'
 gem 'hirb'
+gem 'jwt'
 gem 'rubocop'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
